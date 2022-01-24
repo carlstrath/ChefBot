@@ -1,0 +1,5 @@
+rules:
+- rule: reutrn to last step after custom action
+  steps:
+  - action: update_tracker.latest_message['entities']
+  - intent: MemoizationPolicy.lastest_message

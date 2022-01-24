@@ -1,0 +1,865 @@
+version: "2.0"
+
+stories:
+
+#English Muffins Start
+- story: englishmuffinsyespath
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: vegmeals
+  - action: utter_meat_menu_types
+  - intent: dessertmenumeat
+  - action: utter_meal_types
+  - intent: englishmuffins
+  - action: utter_r1a
+  - intent: affirm
+  - action: utter_r1b
+  - action: utter_yes_no
+  - intent: yesmode
+  - action: utter_r1c
+  - or:
+    - intent: affirm
+    - intent: r1
+  - action: utter_r1d
+  - or:
+    - intent: affirm
+    - intent: r1
+  - action: utter_r1e
+  - or:
+    - intent: affirm
+    - intent: r1
+  - action: utter_r1f
+  - or:
+    - intent: affirm
+    - intent: r1
+  - action: utter_r1g
+  - or:
+    - intent: affirm
+    - intent: r1
+  - action: utter_r1h
+  - or:
+    - intent: affirm
+    - intent: r1
+  - action: utter_r1i
+  - or:
+    - intent: affirm
+    - intent: r1
+  - action: utter_r1j
+
+- story: englishmuffinsnopath
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: meals
+  - action: utter_meat_menu_types
+  - intent: englishmuffins
+  - action: utter_r1a
+  - intent: affirm
+  - action: utter_r1b
+  - action: utter_yes_no
+  - intent: nomode
+  - action: utter_not_all_ingredients_english_muffins
+  - intent: search_rec_r1a
+  - action: utter_milk
+  - or:
+    - intent: affirm
+    - intent: deny
+  - action: utter_not_all_ingredients_english_muffins
+  - intent: search_rec_r1b
+  - action: utter_butter
+  - or:
+    - intent: affirm
+    - intent: deny
+  - action: utter_not_all_ingredients_english_muffins
+  - intent: search_rec_r1c
+  - action: utter_salt
+  - or:
+    - intent: affirm
+    - intent: deny
+  - action: utter_not_all_ingredients_english_muffins
+  - intent: search_rec_r1d
+  - action: utter_sugar
+  - or:
+    - intent: affirm
+    - intent: deny
+  - action: utter_not_all_ingredients_english_muffins
+  - intent: search_rec_r1e
+  - action: utter_egg
+  - or:
+    - intent: affirm
+    - intent: deny
+  - action: utter_not_all_ingredients_english_muffins
+  - intent: search_rec_r1f
+  - action: utter_bread_flour
+  - or:
+    - intent: affirm
+    - intent: deny
+  - action: utter_not_all_ingredients_english_muffins
+  - intent: search_rec_r1f
+  - action: utter_instant_yeast
+  - or:
+    - intent: affirm
+    - intent: deny
+  - action: utter_not_all_ingredients_english_muffins
+  - intent: all_ingredients_english_muffins
+  - action: utter_r1c
+  - or:
+    - intent: affirm
+    - intent: r1
+  - action: utter_r1d
+  - or:
+    - intent: affirm
+    - intent: r1
+  - action: utter_r1e
+  - or:
+    - intent: affirm
+    - intent: r1
+  - action: utter_r1f
+  - or:
+    - intent: affirm
+    - intent: r1
+  - action: utter_r1g
+  - or:
+    - intent: affirm
+    - intent: r1
+  - action: utter_r1h
+  - or:
+    - intent: affirm
+    - intent: r1
+  - action: utter_r1i
+  - or:
+    - intent: affirm
+    - intent: r1
+  - action: utter_r1j
+
+- story: englishmuffinrestartpath
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: vegmeals
+  - action: utter_meat_menu_types
+  - intent: dessertmenumeat
+  - action: utter_meal_types
+  - intent: englishmuffins
+  - action: utter_r1a
+  - intent: deny
+  - action: utter_meal_types
+#English Muffins Finish
+
+
+#Strawberry Pie Start
+#- story: strawberrypieyespath
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: vegmeals
+#  - action: utter_meat_menu_types
+#  - intent: dessertmenumeat
+#  - action: utter_meal_types
+#  - intent: strawberrypie
+#  - action: utter_r2a
+#  - intent: affirm
+#  - action: utter_r2b
+#  - action: utter_yes_no
+#  - intent: yesmode
+#  - action: utter_r2c
+#  - or:
+#    - intent: affirm
+#    - intent: r2
+#  - action: utter_r2d
+#  - or:
+#    - intent: affirm
+#    - intent: r2
+#  - action: utter_r2e
+#  - or:
+#    - intent: affirm
+#    - intent: r2
+#  - action: utter_r2f
+#  - or:
+#    - intent: affirm
+#    - intent: r2
+#  - action: utter_r2g
+#  - or:
+#    - intent: affirm
+#    - intent: r2
+#  - action: utter_r2h
+#  - or:
+#    - intent: affirm
+#    - intent: r2
+#  - action: utter_r2i
+#  - or:
+#    - intent: affirm
+#    - intent: r2
+#  - action: utter_r2j
+#  - or:
+#    - intent: affirm
+#    - intent: r2
+# - action: utter_r2k
+
+
+#- story: strawberrypienopath
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: vegmeals
+#  - action: utter_meat_menu_types
+#  - intent: dessertmenumeat
+#  - action: utter_meal_types
+#  - intent: strawberrypie
+#  - action: utter_r2a
+#  - intent: affirm
+#  - action: utter_r2b
+#  - action: utter_yes_no
+#  - intent: nomode
+#  - action: utter_not_all_ingredients_strawberrypie
+#  - intent: search_rec_r2a
+#  - action: utter_plain_flour
+#  - or:
+#    - intent: affirm
+#    - intent: deny
+#  - action: utter_not_all_ingredients_strawberrypie
+#  - intent: search_rec_r2b
+#  - action: utter_sugar
+#  - or:
+#    - intent: affirm
+#    - intent: deny
+#  - action: utter_not_all_ingredients_strawberrypie
+#  - intent: search_rec_r2c
+#  - action: utter_salt
+#  - or:
+#    - intent: affirm
+#    - intent: deny
+#  - action: utter_not_all_ingredients_strawberrypie
+#  - intent: search_rec_r2d
+#  - action: utter_instant_yeast
+#  - or:
+#    - intent: affirm
+#    - intent: deny
+#  - action: utter_not_all_ingredients_strawberrypie
+#  - intent: search_rec_r2e
+#  - action: utter_milk
+#  - or:
+#    - intent: affirm
+#    - intent: deny
+#  - action: utter_not_all_ingredients_strawberrypie
+#  - intent: search_rec_r2f
+#  - action: utter_egg
+#  - or:
+#    - intent: affirm
+#    - intent: deny
+#  - action: utter_not_all_ingredients_strawberrypie
+#  - intent: search_rec_r2g
+#  - action: utter_unsalted_butter
+#  - or:
+#    - intent: affirm
+#    - intent: deny
+#  - action: utter_not_all_ingredients_strawberrypie
+#  - intent: search_rec_r2h
+#  - action: utter_oil_spray
+#  - or:
+#    - intent: affirm
+#    - intent: deny
+#  - action: utter_not_all_ingredients_strawberrypie
+#  - intent: search_rec_r2i
+#  - action: utter_vanilla_extract
+#  - or:
+#    - intent: affirm
+#    - intent: deny
+#  - action: utter_not_all_ingredients_strawberrypie
+#  - intent: search_rec_r2j
+#  - action: utter_powdered_sugar
+#  - or:
+#    - intent: affirm
+#    - intent: deny
+#  - action: utter_not_all_ingredients_strawberrypie
+#  - intent: search_rec_r2k
+#  - action: utter_maple_syrup
+#  - or:
+#    - intent: affirm
+#    - intent: deny
+#  - action: utter_not_all_ingredients_strawberrypie
+#  - intent: search_rec_r2l
+#  - action: utter_cinnamon_powder
+#  - or:
+#    - intent: affirm
+#    - intent: deny
+#  - action: utter_not_all_ingredients_strawberrypie
+#  - intent: all_ingredients_strawberrypie
+#  - action: utter_r2c
+#  - or:
+#    - intent: affirm
+#    - intent: r2
+#  - action: utter_r2d
+#  - or:
+#    - intent: affirm
+#    - intent: r2
+#  - action: utter_r2e
+#  - or:
+#    - intent: affirm
+#    - intent: r2
+#  - action: utter_r2f
+#  - or:
+#    - intent: affirm
+#    - intent: r2
+#  - action: utter_r2g
+#  - or:
+#    - intent: affirm
+#    - intent: r2
+#  - action: utter_r2h
+#  - or:
+#    - intent: affirm
+#    - intent: r2
+#  - action: utter_r2i
+#  - or:
+#    - intent: affirm
+#    - intent: r2
+#  - action: utter_r2j
+#  - or:
+#    - intent: affirm
+#    - intent: r2
+#  - action: utter_r2k
+
+
+#- story: strawberrypierestartpath
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: vegmeals
+#  - action: utter_meat_menu_types
+#  - intent: dessertmenumeat
+#  - action: utter_meal_types
+#  - intent: strawberrypie
+#  - action: utter_r2a
+#  - intent: deny
+#  - action: utter_meal_types
+#Strawberry Pie Finish
+
+
+
+
+#air fryer glazed donuts start
+
+#- story: airfryerglazeddonutsrestartpath
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - or:
+#    - intent: vegmeals
+#    - intent: meatmeals
+#  - action: utter_meat_menu_types
+#  - or:
+#    - intent: lightsnacksmenuveg
+#    - intent: lightsnacksmenumeat
+#  - action: utter_meal_types
+#  - intent: airfryerglazeddonuts
+#  - action: utter_r3a
+#  - intent: deny
+#  - action: utter_meal_types
+
+#- story: airfryerglazeddonutyespath
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - or:
+#    - intent: vegmeals
+#    - intent: meatmeals
+#  - action: utter_meat_menu_types
+#  - or:
+#    - intent: lightsnacksmenumeat
+#    - intent: lightsnacksmenuveg
+#  - action: utter_meal_types
+#  - intent: airfryerglazeddonuts
+#  - action: utter_r3a
+#  - intent: affirm
+#  - action: utter_r3b
+#  - action: utter_yes_no
+#  - intent: yesmode
+#  - action: utter_r3c
+#  - or:
+#    - intent: affirm
+#    - intent: r3
+#  - action: utter_r1d
+#  - or:
+#    - intent: affirm
+#    - intent: r3
+#  - action: utter_r3e
+#  - or:
+#    - intent: affirm
+#    - intent: r3
+#  - action: utter_r3f
+#  - or:
+#    - intent: affirm
+#    - intent: r3
+#  - action: utter_r3g
+#  - or:
+#    - intent: affirm
+#    - intent: r3
+#  - action: utter_r3h
+#  - or:
+#    - intent: affirm
+#    - intent: r3
+#  - action: utter_r3i
+#  - or:
+#    - intent: affirm
+#    - intent: r3
+#  - action: utter_r3j
+#  - or:
+#    - intent: affirm
+#    - intent: r3
+#  - action: utter_r3k
+#  - or:
+#    - intent: affirm
+#    - intent: r3
+#  - action: utter_r3l
+#  - or:
+#    - intent: affirm
+#    - intent: r3
+#  - action: utter_r3m
+
+
+#- story: airfryerglazeddonutsnopath
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: vegmeals
+#  - action: utter_meat_menu_types
+#  - intent: dessertmenumeat
+#  - action: utter_meal_types
+#  - intent: airfryerglazeddonuts
+#  - action: utter_r3a
+#  - intent: affirm
+#  - action: utter_r3b
+#  - action: utter_yes_no
+#  - intent: nomode
+#  - action: utter_not_all_ingredients_airfryerglazeddonuts
+#  - intent: search_rec_r3a
+#  - action: utter_plain_flour
+#  - or:
+#    - intent: affirm
+#    - intent: deny
+#  - action: utter_not_all_ingredients_airfryerglazeddonuts
+#  - intent: search_rec_r3b
+#  - action: utter_sugar
+#  - or:
+#    - intent: affirm
+#    - intent: deny
+#  - action: utter_not_all_ingredients_airfryerglazeddonuts
+#  - intent: search_rec_r3c
+#  - action: utter_salt
+#  - or:
+#    - intent: affirm
+#    - intent: deny
+#  - action: utter_not_all_ingredients_airfryerglazeddonuts
+#  - intent: search_rec_r3d
+#  - action: utter_instant_yeast
+#  - or:
+#    - intent: affirm
+#    - intent: deny
+#  - action: utter_not_all_ingredients_airfryerglazeddonuts
+#  - intent: search_rec_r3e
+#  - action: utter_milk
+#  - or:
+#    - intent: affirm
+#    - intent: deny
+#  - action: utter_not_all_ingredients_airfryerglazeddonuts
+#  - intent: search_rec_r3f
+#  - action: utter_unsalted_butter
+#  - or:
+#    - intent: affirm
+#    - intent: deny
+#  - action: utter_not_all_ingredients_airfryerglazeddonuts
+#  - intent: search_rec_r3g
+#  - action: utter_oil_spray
+#  - or:
+#    - intent: affirm
+#    - intent: deny
+#  - action: utter_not_all_ingredients_airfryerglazeddonuts
+#  - intent: search_rec_r3h
+#  - action: utter_vanilla_extract
+#  - or:
+#    - intent: affirm
+#    - intent: deny
+#  - action: utter_not_all_ingredients_airfryerglazeddonuts
+#  - intent: search_rec_r3i
+#  - action: utter_powdered_sugar
+#  - or:
+#    - intent: affirm
+#    - intent: deny
+#  - action: utter_not_all_ingredients_airfryerglazeddonuts
+#  - intent: search_rec_r3j
+#  - action: utter_maple_syrup
+#  - or:
+#    - intent: affirm
+#    - intent: deny
+#  - action: utter_not_all_ingredients_airfryerglazeddonuts
+#  - intent: search_rec_r3k
+#  - action: utter_sprinkles
+#  - or:
+#    - intent: affirm
+#    - intent: deny
+#  - action: utter_not_all_ingredients_airfryerglazeddonuts
+#  - intent: search_rec_r3l
+#  - action: utter_cinnamon_powder
+#  - or:
+#    - intent: affirm
+#    - intent: deny
+#  - action: utter_not_all_ingredients_airfryerglazeddonuts
+#  - intent: all_ingredients_airfryerglazeddonuts
+#  - action: utter_r3c
+#  - or:
+#    - intent: affirm
+#    - intent: r3
+#  - action: utter_r3d
+#  - or:
+#    - intent: affirm
+#    - intent: r3
+#  - action: utter_r3e
+#  - or:
+#    - intent: affirm
+#    - intent: r3
+#  - action: utter_r3f
+#  - or:
+#    - intent: affirm
+#    - intent: r3
+#  - action: utter_r3g
+#  - or:
+#    - intent: affirm
+#    - intent: r3
+#  - action: utter_r3h
+#  - or:
+#   - intent: affirm
+#   - intent: r3
+# - action: utter_r3i
+# - or:
+#   - intent: affirm
+#   - intent: r3
+# - action: utter_r3j
+#  - or:
+#    - intent: affirm
+#    - intent: r3 
+#  - action: utter_r3k
+#  - or:
+#    - intent: affirm
+#    - intent: r3
+#  - action: utter_r3l
+#  - or:
+#    - intent: affirm
+#    - intent: r3
+#  - action: utter_r3m
+#air fryer glazed donuts finish
+
+
+#air pumpkin spiced donuts start
+#- story: pumpkinspicedonutspathrestartpath
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - or:
+#    - intent: vegmeals
+#    - intent: meatmeals
+#  - action: utter_meat_menu_types
+#  - or:
+#    - intent: lightsnacksmenuveg
+#    - intent: lightsnacksmenumeat
+#  - action: utter_meal_types
+#  - intent: pumpkinspicedonuts
+#  - action: utter_r4a
+#  - intent: deny
+#  - action: utter_meal_types
+
+#- story: pumpkinspicedonutspathyespath
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - or:
+#    - intent: vegmeals
+#    - intent: meatmeals
+#  - action: utter_meat_menu_types
+#  - or:
+#    - intent: lightsnacksmenumeat
+#    - intent: lightsnacksmenuveg
+#  - action: utter_meal_types
+#  - intent: pumpkinspicedonuts
+#  - action: utter_r4a
+#  - intent: affirm
+#  - action: utter_r4b
+#  - action: utter_yes_no
+#  - intent: yesmode
+#  - action: utter_r4c
+#  - or:
+#    - intent: affirm
+#    - intent: r4
+#  - action: utter_r4d
+#  - or:
+#    - intent: affirm
+#    - intent: r4
+#  - action: utter_r4e
+#  - or:
+#    - intent: affirm
+#    - intent: r4
+#  - action: utter_r4f
+#  - or:
+#    - intent: affirm
+#    - intent: r4
+#  - action: utter_r4g
+
+#- story: pumpkinspicedonutspathnopath
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: vegmeals
+#  - action: utter_meat_menu_types
+#  - or:
+#    - intent: lightsnacksmenumeat
+#    - intent: lightsnacksmenuveg
+#  - action: utter_meal_types
+#  - intent: pumpkinspicedonuts
+#  - action: utter_r4a
+#  - intent: affirm
+#  - action: utter_r4b
+#  - action: utter_yes_no
+#  - intent: nomode
+#  - action: utter_not_all_ingredients_pumpkinspicedonuts
+#  - intent: search_rec_r4a
+#  - action: utter_plain_flour
+#  - or:
+#    - intent: affirm
+#    - intent: deny
+#  - action: utter_not_all_ingredients_pumpkinspicedonuts
+ # - intent: search_rec_r4b
+#  - action: utter_oil_spray
+#  - or:
+#    - intent: affirm
+#    - intent: deny
+#  - action: utter_not_all_ingredients_pumpkinspicedonuts
+#  - intent: search_rec_r4c
+#  - action: utter_canned_pumpkin
+#  - or:
+#    - intent: affirm
+#    - intent: deny
+#  - action: utter_not_all_ingredients_pumpkinspicedonuts
+#  - intent: search_rec_r4d
+#  - action: utter_milk
+#  - or:
+#    - intent: affirm
+#    - intent: deny
+#  - action: utter_not_all_ingredients_pumpkinspicedonuts
+#  - intent: search_rec_r4e
+#  - action: utter_brown_sugar
+#  - or:
+#    - intent: affirm
+#    - intent: deny
+#  - action: utter_not_all_ingredients_pumpkinspicedonuts
+#  - intent: search_rec_r4f
+#  - action: utter_vegetable_oil
+#  - or:
+#    - intent: affirm
+#    - intent: deny
+#  - action: utter_not_all_ingredients_pumpkinspicedonuts
+#  - intent: search_rec_r4g
+#  - action: utter_egg
+#  - or:
+#    - intent: affirm
+#    - intent: deny
+#  - action: utter_not_all_ingredients_pumpkinspicedonuts
+#  - intent: search_rec_r4h
+#  - action: utter_vanilla_extract
+#  - or:
+#    - intent: affirm
+#    - intent: deny
+#  - action: utter_not_all_ingredients_pumpkinspicedonuts
+#  - intent: search_rec_r4i
+#  - action: utter_baking_powder
+#  - or:
+#    - intent: affirm
+#    - intent: deny
+#  - action: utter_not_all_ingredients_pumpkinspicedonuts
+#  - intent: search_rec_r4j
+#  - action: utter_salt
+#  - or:
+#    - intent: affirm
+#    - intent: deny
+#  - action: utter_not_all_ingredients_pumpkinspicedonuts
+#  - intent: search_rec_r4k
+#  - action: utter_cinnamon_powder
+#  - or:
+ #   - intent: affirm
+#    - intent: deny
+#  - action: utter_not_all_ingredients_pumpkinspicedonuts
+#  - intent: search_rec_r4l
+ # - action: utter_nutmeg
+#  - or:
+#    - intent: affirm
+#    - intent: deny
+#  - action: utter_not_all_ingredients_pumpkinspicedonuts
+#  - intent: search_rec_r4m
+#  - action: utter_allspice
+#  - or:
+ #   - intent: affirm
+#    - intent: deny
+#  - action: utter_not_all_ingredients_pumpkinspicedonuts
+ # - intent: search_rec_r4n
+ # - action: utter_ground_cloves
+ # - or:
+ #   - intent: affirm
+ #   - intent: deny
+ # - action: utter_not_all_ingredients_pumpkinspicedonuts
+ # - intent: all_ingredients_pumpkinspicedonuts
+ # - action: utter_r4c
+ # - or:
+ #   - intent: affirm
+ #   - intent: r4
+ # - action: utter_r4d
+ # - or:
+ #   - intent: affirm
+ #   - intent: r4
+ # - action: utter_r4e
+ # - or:
+ #   - intent: affirm
+ #   - intent: r4
+ # - action: utter_r4f
+ # - or:
+ #   - intent: affirm
+ #   - intent: r4
+ # - action: utter_r4g
+#air pumpkin spiced donuts finish
+
+#Misirwot start 
+#- story: misirwotrestartpath
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: vegmeals
+#  - action: utter_meat_menu_types
+#  - intent: dessertmenuveg
+#  - action: utter_meal_types
+#  - intent: misirwot
+#  - action: utter_r5a
+#  - intent: deny
+#  - action: utter_meal_types
+
+#- story: misirwotpath
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: misirwot
+#  - action: utter_r5a
+#  - intent: affirm
+#  - action: utter_r5b
+#  - intent: r5
+#  - action: utter_r5c
+#  - intent: r5
+#  - action: utter_r5d
+#  - intent: r5
+#  - action: utter_r5e
+#  - intent: r5
+#  - action: utter_r5f
+#  - intent: r5
+#  - action: utter_r5g
+
+  
+#- story: pineapplestrawberrysaladpath
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: pineapplestrawberrysalad
+#  - action: utter_r6a
+#  - intent: affirm
+#  - action: utter_r6b
+#  - intent: r6
+#  - action: utter_r6c
+#  - intent: r6
+#  - action: utter_r6d
+#  - intent: r6
+#  - action: utter_r6e
+
+  
+#- story: peartartetatinspath
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: peartartetatin
+#  - action: utter_r7a
+#  - intent: affirm
+#  - action: utter_r7b
+#  - intent: r7
+#  - action: utter_r7c
+#  - intent: r7
+#  - action: utter_r7d
+#  - intent: r7
+#  - action: utter_r7e
+#  - intent: r7
+#  - action: utter_r7f
+#  - intent: r7
+#  - action: utter_r7g
+#  - intent: r7
+#  - action: utter_r7h
+
+#- story: roastedveggienoodlespath
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: roastedveggienoodles
+#  - action: utter_r8a
+#  - intent: affirm
+#  - action: utter_r8b
+#  - intent: r8
+#  - action: utter_r8c
+#  - intent: r8
+#  - action: utter_r8d
+#  - intent: r8
+#  - action: utter_r8e
+#  - intent: r8
+#  - action: utter_r8f
+
+
+#- story: quinoaburritobowlpath
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: quinoaburritobowl
+#  - action: utter_r9a
+#  - intent: affirm
+#  - action: utter_r9b
+#  - intent: r9
+#  - action: utter_r9c
+#  - intent: r9
+#  - action: utter_r9d
+#  - intent: r9
+#  - action: utter_r9e
+#  - intent: r9
+#  - action: utter_r9f
+#  - intent: r9
+#  - action: utter_r9g
+#  - intent: r9
+#  - action: utter_r9h
+#  - intent: r9
+#  - action: utter_r9i
+
+#- story: mangohabanerohotsaucepath
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: mangohabanerohotsauce
+#  - action: utter_r10a
+#  - intent: affirm
+#  - action: utter_r10b
+ 
+#  - intent: r10
+#  - action: utter_r10c
+#  - intent: r10
+#  - action: utter_r10d
+#  - intent: r10
+#  - action: utter_r10e
+#  - intent: r10
+#  - action: utter_r10f
+#  - intent: r10
+#  - action: utter_r10g
+
+- story: utensils_path
+  steps:
+  - intent: search_utensils
+  - action: action_utensilexplan
+
+ 
