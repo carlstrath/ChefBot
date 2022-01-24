@@ -1,0 +1,572 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- all_ingredients_english_muffins
+- all_ingredients_airfryerglazeddonuts
+- all_ingredients_pumpkinspicedonuts
+- search_rec_r4a
+- search_rec_r4b
+- search_rec_r4c
+- search_rec_r4d
+- search_rec_r4e
+- search_rec_r4f
+- search_rec_r4g
+- search_rec_r4h
+- search_rec_r4i
+- search_rec_r4j
+- search_rec_r4k
+- search_rec_r4l
+- search_rec_r4m
+- search_rec_r4n
+- search_rec_r3a
+- search_rec_r3b
+- search_rec_r3c
+- search_rec_r3d
+- search_rec_r3e
+- search_rec_r3f
+- search_rec_r3g
+- search_rec_r3h
+- search_rec_r3i
+- search_rec_r3j
+- search_rec_r3k
+- search_rec_r3l
+- search_rec_r1a
+- search_rec_r1b
+- search_rec_r1c
+- search_rec_r1d
+- search_rec_r1e
+- search_rec_r1f
+- search_rec_r1g
+- search_rec_r2e
+- search_rec_r2d
+- search_rec_r2c
+- search_rec_r2b
+- search_rec_r2f
+- search_rec_r2g
+- search_rec_r2h
+- search_rec_r2i
+- search_rec_r2j
+- search_rec_r2k
+- search_rec_r2l
+- all_ingredients_strawberrypie
+- search_rec_r2a
+- lightsnacksmenuveg
+- lightsnacksmenumeat
+- dessertmenuveg
+- dinnermenuveg
+- lunchmenuveg
+- breakfastmenuveg
+- dessertmenumeat
+- dinnermenumeat
+- lunchmenumeat
+- breakfastmenumeat
+- meatmeals
+- vegmeals
+- yesmode
+- nomode
+- menu_of_meals
+- greet
+- order_meal
+- affirm
+- goodbye
+- stop
+- bot_challenge
+- deny
+- mood_great
+- mood_unhappy
+- request_fancy_form
+- request_pizza_form
+- r1
+- r2
+- r3
+- r4
+- r5
+- r6
+- r7
+- r8
+- r9
+- r10
+- menuclass
+- next
+- alternatefoods
+- search_utensils
+- englishmuffins
+- strawberrypie
+- airfryerglazeddonuts
+- pumpkinspicedonuts
+- misirwot
+- pineapplestrawberrysalad
+- peartartetatin
+- roastedveggienoodles
+- quinoaburritobowl
+- mangohabanerohotsauce
+- iwantsomethingelse
+
+entities:
+- meal_type
+- menu
+- utensils
+
+slots:
+  menu:
+    type: text
+    influence_conversation: true
+  meal_type:
+    type: text
+    influence_conversation: true
+  requested_slot:
+    type: unfeaturized
+    influence_conversation: false
+
+responses:
+  utter_yes_no:
+  - text: Do you have these ingredients?
+    buttons:
+    - title: Yes?
+      payload: /yesmode
+    - title: No?
+      payload: /nomode
+
+  utter_greet:
+  - text: Hello, this is chefbot, please select a meal type
+    buttons:
+    - title: Vegetarian Meals
+      payload: /vegmeals
+    - title: Non-vegetarian Meals
+      payload: /meatmeals
+
+  utter_meat_menu_types:
+  - text: Please select a menu
+    buttons:
+    - title: Breakfast Menu
+      payload: /breakfastmenumeat
+    - title: Lunch Menu
+      payload: /lunchmenumeat
+    - title: Dinner Menu
+      payload: /dinnermenumeat
+    - title: Light Snacks Menu
+      payload: /lightsnacksmenumeat
+    - title: Dessert Menu
+      payload: /dessertmenumeat
+
+  utter_veg_menu_types:
+  - text: Please select a menu
+    buttons:
+    - title: Breakfast Menu
+      payload: /breakfastmenuveg
+    - title: Lunch Menu
+      payload: /lunchmenuveg
+    - title: Dinner Menu
+      payload: /dinnermenuvege
+    - title: Light Snacks Menu
+      payload: /lightsnacksmenuveg
+    - title: Dessert Menu
+      payload: /dessertmenuveg
+  
+
+  utter_meal_types:
+  - text: Select a recipe from the list, 
+    buttons:
+    - title: english muffins
+      payload: /englishmuffins
+    - title: airfryer glazed donuts
+      payload: /airfryerglazeddonuts
+    - title: strawberry pie
+      payload: /strawberrypie
+    - title: pumpkin spice donuts
+      payload: /pumpkinspicedonuts
+    - title: misir wot
+      payload: /misirwot
+    - title: pineapple strawberry salad
+      payload: /pineapplestrawberrysalad
+    - title: mango habanero hot sauce
+      payload: /bot_challenge
+    - title: pear tarte tatin
+      payload: /peartartetatin
+    - title: roasted veggie noodles
+      payload: /roastedveggienoodles
+    - title: quinoa burrito bowl
+      payload: /quinoaburritobowl
+
+  utter_not_all_ingredients:
+  - text: Please state which ingredients are missing 
+
+  #ENLGISH MUFFINS
+  utter_not_all_ingredients_english_muffins:
+  - text: Please click which ingredients are missing for alternative options.
+    buttons:
+    - title: milk
+      payload: /search_rec_r1a
+    - title: butter
+      payload: /search_rec_r1b
+    - title: salt
+      payload: /search_rec_r1c
+    - title: sugar
+      payload: /search_rec_r1d
+    - title: egg
+      payload: /search_rec_r1e
+    - title: bread flour
+      payload: /search_rec_r1f
+    - title: instant yeast
+      payload: /search_rec_r1g
+    - title: I now have all the Ingredients
+      payload: /all_ingredients_english_muffins
+
+#STRAWBERRY PIE
+  utter_not_all_ingredients_strawberrypie:
+  - text: Please click which ingredients are missing for alternative options.
+    buttons:
+    - title: plain flour
+      payload: /search_rec_r2a
+    - title: sugar
+      payload: /search_rec_r2b
+    - title: salt
+      payload: /search_rec_r2c
+    - title: instant yeast
+      payload: /search_rec_r2d
+    - title: milk
+      payload: /search_rec_r2e
+    - title: egg
+      payload: /search_rec_r2f
+    - title: unsalted butter
+      payload: /search_rec_r2g
+    - title: oil spray
+      payload: /search_rec_r2h
+    - title: vanilla extract
+      payload: /search_rec_r2i
+    - title: powdered sugar
+      payload: /search_rec_r2j
+    - title: maple syrup
+      payload: /search_rec_r2k
+    - title: cinnamon powder
+      payload: /search_rec_r2l
+    - title: I now have all the Ingredients
+      payload: /all_ingredients_strawberrypie
+
+#AIR FRYER GLAZED DONUHTS
+  utter_not_all_ingredients_airfryerglazeddonuts:
+  - text: Please click which ingredients are missing for alternative options.
+    buttons:
+    - title: plain flour
+      payload: /search_rec_r3a
+    - title: sugar
+      payload: /search_rec_r3b
+    - title: salt
+      payload: /search_rec_r3c
+    - title: instant yeast
+      payload: /search_rec_r3d
+    - title: milk
+      payload: /search_rec_r3e
+    - title: unsalted butter
+      payload: /search_rec_r3f
+    - title: oil spray
+      payload: /search_rec_r3g
+    - title: vanilla extract
+      payload: /search_rec_r3h
+    - title: powdered sugar
+      payload: /search_rec_r3i
+    - title: maple syrup
+      payload: /search_rec_r3j
+    - title: sprinkles
+      payload: /search_rec_r3k
+    - title: cinnamon powder
+      payload: /search_rec_r3l
+    - title: I now have all the Ingredients
+      payload: /all_ingredients_airfryerglazeddonuts
+
+#PUMPKIN SPICED DONUTS
+  utter_not_all_ingredients_pumpkinspicedonuts:
+  - text: Please click which ingredients are missing for alternative options.
+    buttons:
+    - title: plain flour
+      payload: /search_rec_r4a
+    - title: oil spray
+      payload: /search_rec_r4b
+    - title: canned pumpkin
+      payload: /search_rec_r4c
+    - title: milk
+      payload: /search_rec_r4d
+    - title: brown sugar
+      payload: /search_rec_r4e
+    - title: vegetable oil
+      payload: /search_rec_r4f
+    - title: egg
+      payload: /search_rec_r4g
+    - title: vanilla extract
+      payload: /search_rec_r4h
+    - title: baking powder
+      payload: /search_rec_r4i
+    - title: salt
+      payload: /search_rec_r4j
+    - title: cinamon powder
+      payload: /search_rec_r4k
+    - title: nutmeg
+      payload: /search_rec_r4l
+    - title: allspice
+      payload: /search_rec_r4m
+    - title: ground cloves
+      payload: /search_rec_r4n
+    - title: I now have all the Ingredients
+      payload: /all_ingredients_pumpkinspicedonuts
+
+
+
+#ingredients list
+  utter_plain_flour:
+  - text: instead of plain flour, you can use; oat flour, bread flour, cake flour or coconut flour, do you have any of these ingredients?
+  utter_salt:
+  - text: instead of salt, you can use; mint, rosemary, nutmeg, basil, cardamon, chili, cinnamon or chives, do you have any of these ingredients?
+  utter_sugar:
+  - text: instead of sugar you can use, cane sugar or brown sugar, do you have any of these ingredients?
+  utter_instant_yeast:
+  - text: instead of instant yeast you can use; baking powder. baking soda or sourdough, do you have any of these ingredients?
+  utter_milk:
+  - text: instead of milk you can use; cream, powerdered milk, plain yogurt, nut milk, soy milk, oat milk or rice milk, do you have any of these ingredients?
+  utter_egg:
+  - text: instead of egg you can use; commerical egg substitute or tofu, do you have any of these ingredients?
+  utter_unsalted_butter:
+  - text: instead of unsalted butter you can use, maragarine, vegetable shortening, coconut oil or salted butter, do you have any of these ingredients?           
+  utter_oil_spray:
+  - text: instead of oil spray you can use; olive oil, peanut oil, butter, walnut oil, sunflower oil, canola oil or vegetable oil, do you have any of these ingredients?
+  utter_vanilla_extract:
+  - text: instead of vanilla extract, you can use, maple syrup, almond extract, bourbon, brandy, rum, do you have any of these ingredients?
+  utter_powdered_sugar:
+  - text: instead of powdered sugar you can use, sweetner or cornstarch do you have any of these ingredients?
+  utter_maple_syrup:
+  - text: instead of maple syrup, you can use, honey, corn syrup or agave nectar, do you have any of these ingredients?
+  utter_cinnamon_powder:
+  - text: instead of cinnamon powder, you can use, all spice or or nutmeg, do you have any of these ingredients?   
+  utter_butter:
+  - text: instead of butter you can use; olive oil, ghee, greek yogurt, avocado, pumpkin puree or coconut oil, do you have any of these ingredients?"
+  utter_bread_flour:
+  - text: instead of bread flour you can use; all purpose flour do you have this ingredient?
+  utter_sprinkles:
+  - text: instead of sprinkles, you can use, brown sugar or honey, do you have any of these ingredients?    
+  utter_canned_pumpkin:
+  - text: instead of canned pumpkin, you can use, mashed sweet potato or butternut squash, do you have any of these ingredients?
+  utter_brown_sugar:
+  - text: instead of brown sugar you can use, white sugar, honey, maple syrup, coconut sugar or muscovado sugar, do you have any of these ingredients?  
+  utter_vegetable_oil:
+  - text: instead of vegetable oil you can use, canola oil, sunflower oil, peanut oil or grapeseed oil, do you have any of these ingredients
+  utter_baking_powder:
+  - text: instead of baking powder you can use, buttermilk, plain yogurt, molasses, cream of tartar, sour milk, vinegar, lemon juice, self-rising flour or whipped egg whites, do you have any of these ingredients?
+  utter_nutmeg:
+  - text: instead of nutmeg you can use, mace, garam masala, allspice, cinnamon, apple pie spice, giner or cloves, do you have any of these ingredients?
+  utter_allspice:
+  - text: instead of allspice you can use, cinnamon, nutmeg, cloves or applie pie spice, do you have any of these ingredients?        
+  utter_ground_cloves:
+  - text: instead of ground cloves you can use, allspice, caradamon, pumpkin pie spice or cinnamon, do you have any of these ingredients?
+
+
+
+
+
+#RANDOM BITS
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_submit:
+  - text: I will now order a pizza for you!
+  utter_pizza_slots:
+  - text: I will order a {pizza_size} {meal_type} pizza.
+  utter_ask_continue:
+  - text: Are you sure you want to stop the form?
+  utter_ask_pizza_size:
+  - text: What size would you like your pizza to be?
+  utter_ask_meal_type:
+  - text: What kind of pizza would you like to buy?
+  utter_ask_menu:
+  - text: What meal do you want to cook?
+
+
+#RECIPE LINES
+  utter_r1a:
+  - text: English Muffins takes 180 minutes to cook, serves 16 and contains 7 ingredients, is this ok?
+  utter_r1b:
+  - text: To cook English Muffins you will need, 'milk', 'butter', 'salt', 'sugar', 'egg’, 'bread flour', 'instant yeast', do you have these ingredients?
+  utter_r1c:
+  - text: To start with combine 1 and three quarter cups of lukewarm milk, 3 tablespoons of soft butter, one and a half teaspoons of salt, 2 tablespoons of sugar, one egg, 5 cups of bread flour, and 2 teaspoons of yeast in a large mixing bowl of an electric stand mixer.
+  utter_r1d:
+  - text: Next, use the paddle attachment on your mixer and mix the ingredients on the lowest setting for 3 to 5 minutes until the dough becomes satin-smooth and shiny.
+  utter_r1e:
+  - text: Using a silicone spatula scrape the dough down in the mixing bowl into a ball. Cover the bowl and set aside for 1 to 2 hours in a warm spot to rise until it has doubled or tripled in size.
+  utter_r1f:
+  - text: Using a silicone spatula, scrape the dough onto a floured work surface and divide the dough into 16 pieces. Shape each piece into a ball, then flatten the balls until they're about 3 to 3 1/2 inches in diameter.
+  utter_r1g:
+  - text: On an electric griddle, place 16 of the English Muffins, if the griddle is not big enough for 16 split into 8 and cook separately. Sprinkle a generous amount of corn meal into each ring or spot in between the muffins on the griddle.
+  utter_r1h:
+  - text: Cover the muffins and let them rest until they've puffed up a little bit and are touching the edges of the rings, about 20 minutes.
+  utter_r1i:
+  - text: Cook the muffins at 325°F on the electric griddle for 12 minutes, until golden brown on the bottom. Using tongs and a spatula, flip the muffins over and cook the other side for 12 minutes until the center of the muffins reads 195°F on an instant-read thermometer.
+  utter_r1j:
+  - text: 'Remove the muffins from the griddle and let them cool thoroughly. Using a large fork, poke holes all along the sides of the muffin to split them open, enjoy your meal. '
+  utter_r2a:
+  - text: Strawberry Pie takes 3h and 25 minutes to cook, serves 8 and contains 10  ingredients, is this ok?
+  utter_r2b:
+  - text: To cook stawberry pie you will need, all-purpose flour, teaspoon of salt, vegetable shortening, ice-cold water,strawberries, sugar, cornstarch, low-sugar pectin, heavy cream, do you have these ingredients?
+  utter_r2c:
+  - text: Let’s start with the pie crust. Mix in a large bowl 1 ⅓ cups of all-purpose flour, 1 tablespoon of salt and ½ cups of vegetable shortening. Use two dull butter knives or a pastry blender until the mixture is the size of  peas.
+  utter_r2d:
+  - text: Take a glass of ice-cold water and add 6 tablespoons onto the previously combined flour mixture, use a spatula or your hands if you prefer. Mix into the mixture until it becomes a large ball of dough. Flatten it and cover with wax paper. Put the dough in the freezer for 10 minutes or the fridge for 30 minutes
+  utter_r2e:
+  - text: Take the dough out and roll it to make it thinner,, make sure to put flour underneath so it doesn’t stick to the surface. Place the rolled-out dough onto a deep dish pie plate. Place a second plate onto the crust to weigh it down. Put it into the oven and bake at 180°C for approximately 20-25 minutes. When this is done be sure to let it cool down for 10 minutes before adding the filling.
+  utter_r2f:
+  - text: Now let’s make the filling. Wash and take the green leaves off the 3 pounds of strawberries. Look for the ones that are overripe and place into a bowl until you have 1 ½ cup of strawberries. These are the ones you will use for the filling. Put the strawberries into a food processor to make into a puree.
+  utter_r2g:
+  - text: Now put ¾ cups of sugar, 2 tablespoons of cornstarch, ½ low-sugar pectin, a pinch of salt and the strawberries into a saucepan. Whisk until it is combined.
+  utter_r2h:
+  - text: Heat the mixture until it boils at medium-high heat and keep stirring with a rubber spatula. Once it boils, cook for 2 minutes and then take off the heat. The mixture should look dark and thick
+  utter_r2i:
+  - text: Put the mixture into a large bowl and add the remaining strawberries. Mix until combined.
+  utter_r2j:
+  - text: Remember to take the pie crust out of the oven, once you have let it rest we can move on to the last step, assembly. Pour the strawberry mixture into the pie crust. Put the completed pie into the fridge for 2-5 hours.
+  utter_r2k:
+  - text: To combine with the pie, you can make whipped cream. Add 1 tablespoon of sugar and 1 cup of heavy cream to an electric hand mixer bowl until it's thick and fluffy; it should be about 3 minutes. Serve with the pie and enjoy your meal.
+  utter_r3a:
+  - text: Airfryer Glazed Donuts takes 2h and 30 minutes to cook, serves 10-12 donuts and contains 10 ingredients, is this ok?
+  utter_r3b:
+  - text: "To cook Airfryer Glazed Donuts, you will need: 'all-purpose flour', 'sugar', 'salt', 'instant yeast', 'milk’, 'egg', 'unsalted butter’,'oil spray'. The recipie has 6 optional ingredients 'vanilla extract', 'hot water',’powdered sugar’,’maple syrup’, ‘sprinkles’, 'cinnamon powder, do you have these ingredients?"
+  utter_r3c:
+  - text: Let’s start with the dough. Put 3 cups of all-purpose flour, ¼  cup of sugar, ½ tablespoons of salt and 2 ½  teaspoons of instant yeast into a large bowl and mix until combined and a rough dough forms.
+  utter_r3d:
+  - text: Put 1 cup of room temperature milk, 1 previously whisked egg and ¼ of melted unsalted butter into the dough and combine. When everything is combined transfer it onto a surface to knead until it is smooth and elastic. Be sure to flour the surface so the dough doesn't stick to it. This process should take 5-10 minutes.
+  utter_r3e:
+  - text: Now let’s let the dough rise. Place it into a lightly greased bowl and cover with plastic wrap. After roughly 1 hour transfer the dough onto a floured surface and roll it out until it's around ½ inches.
+  utter_r3f:
+  - text: Take a 3-inch round cutter and cut the donuts out, it should give you around 10 to 14 donuts. Then theake a 1-inch round cutter to remove the center of each donut. Transfer the donuts and donut holes to a tray covered with lightly-greased parchment paper. Then cover the donuts with greased plastic wrap and let them rise until they double their volume. This should be around 30 minutes.
+  utter_r3g:
+  - text: Spray the air fryer basket with oil spray. Transfer the donuts onto it one layer at a time, there shouldn’t be donuts on top of donuts. Spray the donuts with the same oil spray and fry for about 4-5 minutes at 350°F (180°C). Repeat with all the donuts.
+  utter_r3h:
+  - text: Now it's time for the glazing, there are various options. Would you like to know how to coat them with Vanilla Glaze, Maple Glaze or Cinnamon sugar?
+  utter_r3i:
+  - text: To make maple glaze, stir together ½ cup of powdered sugar and 5 tablespoons of maple syrup until it's combined.
+  utter_r3j:
+  - text: Take the donuts and dip them into the icing while they are still hot. Use a fork to do this. When they are dipped, place them on a wire rack to let the excess glaze to drip off. Make sure the wire rack is on top of a baking sheet to catch the excess. Let them harden for 10 minutes and enjoy your meal. You can add sprinkles on top if you wish.
+  utter_r3k:
+  - text: To make cinnamon sugar coating stir together ½ cup of granulated sugar and 1 tablespoon of cinnamon powder until it's combined. Spay the doughnuts with oil before dipping them in them in the mixture. You can add sprinkles on top if you wish. Enjoy your meal
+  utter_r3l:
+  - text: To make vanilla glaze, melt 6 tablespoons of unsalted butter on a small saucepan over medium heat. Once it's melted, stir in 2 cups of powdered sugar and 2 tablespoons of vanilla extract until it's all combined.  Take the mixture off the heat and add 4 tablespoons of hot water one tablespoon at a time to thin out the icing. Make sure it doesn’t become too watery.
+  utter_r3m:
+  - text: Take the donuts and dip them into the icing while they are still hot. Use a fork to do this. When they are dipped, place them on a wire rack to let the excess glaze to drip off. Make sure the wire rack is on top of a baking sheet to catch the excess. Let them harden for 10 minutes and enjoy your meal. You can add sprinkles on top if you wish. Enjoy your meal
+  utter_r4a:
+  - text: Pumpkin Spice Donuts takes 45 minutes to cook, serves 12 donuts and contains 14  ingredients, is this ok?
+  utter_r4b:
+  - text: To make pumpkin Spice Donuts you will need 'cooking spray', 'canned pumpkin', 'milk', 'brown sugar', 'vegetable oil’, 'egg', 'egg’,'vanilla extract', 'flour', 'baking powder', 'salt', 'cinamon’, 'nutmeg', 'allspice', ‘ground cloves', do you have these indregients?
+  utter_r4c:
+  - text: start by preheating the oven to 180°C and lightly grease the inside of a donut pan. Set this aside.
+  utter_r4d:
+  - text: Now pour ¾ cup canned pumpkin, ½ cup milk, ½ cup brown sugar, ⅓ cup vegetable oil, 1 egg and 1 ½ teaspoon of vanilla extract into a mixing bowl and combine the ingredients. Set this aside.
+  utter_r4e:
+  - text: Start pouring the second mixture (dry ingredients) into the first one and combine with a spatula. When this is done transfer half of the batter onto a large plastic or zipper bag and cut one of the bottom corners to make a piping bag. Use this to make the shape of the donuts. Make just enough to fit the donut pan and set the rest of the batter aside
+  utter_r4f:
+  - text: Now bake the donuts for about 12-15 minutes, until they are golden brown. When they are done, transfer them onto a wire rack to let them cool for about 5 minutes. Keep doing this step until you are out of batter.
+  utter_r4g:
+  - text: Now let's make the coating. Mix ½ cup of melted butter, ⅔ cup of sugar and 1-2 tablespoons of cinnamon (to taste) in a bowl. Dip the donuts onto the mixture and enjoy your meal.
+  utter_r5a:
+  - text: Misir Wot takes 30 minutes to cook, serves 8 and contains 9 ingredients, is that ok?
+  utter_r5b:
+  - text: "To cook Misir Wot you will need: 'garlic', 'ginger', 'onion', 'butter', 'berbere seasoning’, 'tomato paste', 'water’,'red lentils', 'salt', do you have these ingredients?"
+  utter_r5c:
+  - text: Okay, let's start. Put 2 cloves of garlic and ½ inches of ginger into a food processor and pulse 10 times. When it's done, transfer the mixture to a bowl.
+  utter_r5d:
+  - text: Chop 1 onion into chunks. Put them into the food processor (which should be empty now) and pulse 6-8 times until it is finely chopped.  After, turn the instant pot onto saute mode and wait 1 minute for it to preheat
+  utter_r5e:
+  - text: Now add 3 tablespoons of butter to the pot and let it metl. Once melted, add the chopped ginger and garlic and saute until fragrant. This should take about 30 seconds
+  utter_r5f:
+  - text: Add the chopped onions to the pot until saute until fragrant again. This should take about 2 minutes.
+  utter_r5g:
+  - text: Add 1 ½ cups water, 1 cup red lentils previously rinsed and 1 teaspoon sea salt onto the pot. Stir it all together to combine. Once it's combined press ‘cancel’ on the instant pot and close the lid. Cook on High Pressure for 8 minutes. When it's done, release the pressure and serve with injera or naan. Enjoy your meal.
+  utter_r6a:
+  - text: Pineapple Strawberry Salad takes 20 minutes to cook, serves 4-6 and contains 8 ingredients, is this ok?
+  utter_r6b:
+  - text: "To make a Pineapple Strawberry Salad you will need: 'strawberries', 'pineapple', 'red onion', 'sweet red pepper', 'cilantro or parsley’, 'key lime juice', 'salt’,'pepper', do you have these ingredients?"
+  utter_r6c:
+  - text: Okay let's begin. Mix 2 cups of strawberries, 2 cups of chopped pineapple, ½ medium chopped sweet red pepper, 2 tablespoons of chopped cilantro or parsley, 2 tablespoons of key lime juice, ¼ teaspoons of salt and a bit of pepper into a large bowl.
+  utter_r6d:
+  - text: If you want you can put it in the fridge for 1 hour or overnight to enhance the flavours, otherwise serve straight away. Enjoy your meal.
+  utter_r6e:
+  - text: Pear Tarte Tatin takes 2 hours to cook, serves 8 and contains 8 ingredients, is this ok?
+  utter_r7a:
+  - text: "To cook Pear Tarte Tatin you will need: 'all-purpose flour', 'salt', 'unsalted butter', 'egg yolk', 'water’, 'pears', 'lemon juice’,'sugar', do you have these ingredients?"
+  utter_r7b:
+  - text: Okay let's begin with making the pastry. Combine 2 cups of all-purpose flour and 1 tablespoon of salt into a large bowl. Once it's mixed, add 1 cup of unsalted butter cut into small pieces and mix with your hands or with a pastry blender. Combine until the mixture is in pea-sized pieces.
+  utter_r7c:
+  - text: Now whisk 1 egg yolk and 2 tablespoons of water in a small bowl. When it's whisked, add the mixture onto the dough. Stir it all together until the dough begins to form. Then, use your hands to shape it into a bowl. Put the dough into the fridge for about 30 minutes until it is firm. Afterwards let it rest and do not roll it out until the fruit has finished cooking.
+  utter_r7d:
+  - text: Next put ¾ cups of sugar in a pan or tarte tatin pan. Put on the hob over low heat. Once some of the sugar begins to melt, start stirring with a wooden spoon until all the sugar it's melted. It should turn into a pale golden colour.
+  utter_r7e:
+  - text: Now turn off the heat and remove the pan. Take the pears and put them on top of the sugar in the pan. Arrange them cut-side-up with the narrow part facing the centre and fill the pan.
+  utter_r7f:
+  - text: Now cut 4 tablespoons of unsalted butter into small pieces and scatter over the pears. Put the pan back on the hob over medium heat. Cook until the sugar turns caramel colour, this should take 15-20 minutes. Do not move the pears or stir.
+  utter_r7g:
+  - text: Next roll the reserved dough into a disc shape, it should be around ¼ inch thick. Roll it so it's bigger than the pan where you placed the pears. Cover the pears and tuck the sides in carefully.
+  utter_r7h:
+  - text: Finally, place the pan into the oven and bake it at 190°C until the crust is golden brown. This should take 25-40 minutes. When it's done, let it cool for 10 minutes. To release the tarte from the pan use a kitchen knife and run it through the edges. Then place a large plate over the pan and, using oven mitts to protect you from burning yourself, flip the tarte over on the plate. Enjoy your meal
+  utter_r8a:
+  - text: Roasted Veggie Noodles takes 40 minutes to cook, serves 12 and contains 9 ingredients, is this okay?
+  utter_r8b:
+  - text: "To cook Roasted Veggie Noodles you will need: ‘sweet potato', 'butternut squash and beet noodles’,’bosc pears’,’olive oil’,’salt’,’pepper’,’butter’,’pecans’, ‘cinamon’, ‘lemon’, do you have these ingredients?"
+  utter_r8c:
+  - text: Okay let’s start.The first thing to do is preheat the oven at 180º. Then, take 2 Bosc pears and use a kitchen knife to dice into small pieces. When this is done, toss 2 pounds of sweet potato, butternut squash and beet noodles, ¼ cup of olive oil and the cut pears into a big bowl. Then, season the ingredients with salt and pepper to taste and mix. When it is all combined, spread the mixture onto a baking sheet previously lined with parchment paper.
+  utter_r8d:
+  - text: Now put it in the oven for about 20 minutes. Make sure you turn and mix it all halfway through, around the 10 minute mark.
+  utter_r8e:
+  - text: While the noodles cook, take 2 tablespoons of butter and put into a small pan on medium heat. Wait until it's melted and add ¾ cup of chopped pecans. Stir often and cook until the pecans are fragrant. This should take 3-5 minutes. When it's done take it off the heat and set aside. For the last part of the recipe, come back and ask me once the noodles are done.
+  utter_r8f:
+  - text: To finish, put the noodles into a large bowl and add the pecans you just made, 1 teaspoon of cinnamon and lemon zest. Combine all the ingredients and it’s done. Enjoy your meal
+  utter_r9a:
+  - text: Quinoa Burrito Bowl takes 40 minutes to cook, serves 4-6 and contains 12 ingredients, is this okay?
+  utter_r9b:
+  - text: 'To cook Quinoa Burrito Bowl you will need: ‘canola oil’,’red onion’,’jalapeño’,’garlic’,’chicken/vegetable broth’,’black beans’,’uncooked quinoa’,’tomatoes’,’frozen corn’,’kosher salt’,’cilantro/parsley’, ‘lime juice’, do you have these ingredients?'
+  utter_r9c:
+  - text: Okay, let’s start. Put 1 tablespoon of canola oil into a large saucepan or dutch oven and start preheating over medium heat. While the pan is heating up, use a kitchen knife and a cutting board and chop 1 small red onion, 1 jalapeó and mince 2 cloves of garlic. Add these onto the pan and use a spatula to saute until fragrant. This should take about 1 minute.
+  utter_r9d:
+  - text: Now take 15 ounces of black beans and 1 cup uncooked quinoa and use a sieve rinse and rain both ingredients. Then, using a kitchen knife and cutting board dice 2 tomatoes. Take these ingredients and  1 ⅓ cups of chicken or vegetable broth, 1 cup of frozen corn and ½ teaspoon of kosher salt and add them to the pot. Use the spatula to combine and bring the pot to a boil. Once it boils, keep stirring and bring it down to a simmer. Cover and let it cook for about 25 minutes, or until the quinoa is cooked and the liquid has been absorbed.
+  utter_r9e:
+  - text: Next remove the pot from the heat. Chop ¼ cups of fresh cilantro or parsley using a kitchen knife and a cutting board. Add this and ½ tablespoon of lime juice to the pot. Use the spatula to stir. To serve, choose what ingredients you would like to top it with. Some options are shredded cheese, shredded lettuce, sour cream or guacamole. I could tell you how to make homemade guacamole, would you like to do that?
+  utter_r9f:
+  - text: Okay, to make homemade guacamole cut 4 avocados in half with a knife and remove the pits. Use a spoon to scoop out the avocado onto a bowl. Mash the avocados using a potato masher or fork.
+  utter_r9g:
+  - text: Now using a kitchen knife and cutting board, chop half a red onion. Add this and 2 tablespoons of fresh squeezed lime juice, 2 teaspoons of sea salt and 1/8 teaspoon of freshly ground black pepper onto the avocados. Mix all the ingredients together with a spatula. Taste the guacamole and adjust any ingredients that you want to your taste.
+  utter_r9h:
+  - text: Now chop 1 ripe tomato using a kitchen knife and a cutting board. Mix this with the guacamole and you are done!
+  utter_r9i:
+  - text: Now top the bowl with any of the ingredients that you want and the guacamole and enjoy your meal!
+  utter_r10a:
+  - text: Mango Habanero Hot Sauce takes 45 minutes to cook, serves 40 ounces and contains 12 ingredients, is this okay?
+  utter_r10b:
+  - text: 'To cook Mango Habanero Hot Sauce you will need: ‘frozen/fresh mango’,’habanero peppers’,’onion’,’grated carrot’,’garlic cloves’,’lime juice’,’lime zest’,’vodka’,’cane sugar’,’apple cider vinegar’,’salt’,’water’, do you have these ingredients?'
+  utter_r10c:
+  - text: Okay let’s begin. For this recipe you will need mangos, there are two options for ingredients. You could either use frozen mangos or fresh mangoes. I recommend that, unless your mangoes are very fresh, you use frozen ones. Whatever your choice is, take 32 ounces of frozen mango and let them melt or 8 very fresh mangos. Then put them into the bowl of a food processor and process until it becomes a very smooth puree. This should take about 3 minutes. Take the mango puree and put it into a bowl; set it aside.
+  utter_r10d:
+  - text: Now we will be using habanero peppers, make sure you are wearing gloves when handling this ingredient. Wash 8-12 habanero peppers, remove the stems and cut them open. Wash out the seeds and using a kitchen knife and cutting board dice the peppers. Place the peppers into a food processor bowl.
+  utter_r10e:
+  - text: Now using the kitchen knife and cutting board chop half an onion. Then using a grater, grate 1 carrot. Add these together with  3 garlic cloves, 1 tablespoon lime juice and 1 teaspoon lime zest into the food processor’s bowl. Pulse the food processor several times in short bursts until it's all broken into small pieces but not pureed. When this is done take the mixture and add it into a large saucepan, and turn the heat on to medium.
+  utter_r10f:
+  - text: Wait till the mixture begins to cook and add ⅔ of a cup of vodka. Use a spatula to combine and cook until it's reduced by half, this should take about 5 minutes. When it's all cooked, take the mixture and put it back into the food processor’s bowl and process until it’s smooth. When its pureed, transfer it back into the saucepan.
+  utter_r10g:
+  - text: Now add the mangos, ¾ of a cup of pure cane sugar, ¼ of a cup of apple cider vinegar and 1 teaspoon of salt into the pan. Use a spatula to stir it together and combine. Cook the mixture over medium heat until it starts to bubble. This should take around 5-10 minutes. Add ¼ of a cup of water to the sauce and combine. Depending on the texture that you want you could use a fine-mesh cloth and strain the sauce onto a food container or vary the water quantities. When you are happy with the consistency of the sauce, transfer it into a jar using a funnel. Enjoy your meal!
+actions:
+- action_ask_meal_type
+- action_ask_vegetarian
+- action_utensilexplan
+- utter_ask_continue
+- utter_ask_meal_type
+- utter_goodbye
+- utter_greet
+- utter_iamabot
+- utter_pizza_slots
+- utter_r1a
+- utter_r1b
+- utter_submit
+- validate_fancy_pizza_form
+- validate_simple_menu_form
+
+
